@@ -16,6 +16,10 @@ module SessionsHelper
     cookies.delete(:remember_token)
     self.current_user=nil
    end
+ def deny
+flash[:notice] = "Access Denied!! Please Sigin/signup to Edit"
+  redirect_to signin_path
+ end
  private 
   def user_form_remember_token
     User.authenticate_with_salt(*remember_token)

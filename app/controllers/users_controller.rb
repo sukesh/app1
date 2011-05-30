@@ -1,5 +1,5 @@
  class UsersController < ApplicationController
-  
+  before_filter :authenticate,:only=>[:edit,:updates]
   def  show
     #@user=User.find_by_email("sukesh@futurenow.biz")
      #@user=User.find("3")
@@ -36,4 +36,12 @@ end
    end
 
 end
+private
+ def authenticate
+   deny unless signed_in? 
+ end
+ def deny
+flash[:notice] = "Access Denied!! Please Sigin/signup to Edit"
+  redirect_to signin_path
+ end
 end 
