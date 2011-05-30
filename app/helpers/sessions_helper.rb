@@ -20,6 +20,9 @@ module SessionsHelper
 flash[:notice] = "Access Denied!! Please Sigin/signup to Edit"
   redirect_to signin_path
  end
+def current_user?(user)
+@user==current_user
+end
  private 
   def user_form_remember_token
     User.authenticate_with_salt(*remember_token)
