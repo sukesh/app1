@@ -32,7 +32,7 @@ it "should have the right URL" do
                                          :href   =>user_path(@user)) 
 end
 end
-  describe "GET 'new'" do
+  describe "GET 'new'" do  
     it "should be successful" do
       get :new
       response.should be_success
