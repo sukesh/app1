@@ -5,12 +5,15 @@ gem 'rails', '3.0.6'
 gem 'rake','~> 0.8.7m'
 gem 'sqlite3'
 gem 'gravatar_image_tag'
+gem 'will_paginate','3.0.pre'
+
 group :development do
-gem 'rspec-rails','2.6.0'
-gem 'annotate-models','1.0.4'
+  gem 'rspec-rails','2.6.0'
+  gem 'annotate-models','1.0.4'
+  gem 'faker'
 end
 group :test do
-gem 'rspec-rails','2.6.0'
-gem 'spork', '0.8.4 '
-gem 'factory_girl_rails'
+  gem 'rspec-rails','2.6.0'
+  gem 'spork', '0.8.4 '
+  gem 'factory_girl_rails'
 end
